@@ -161,7 +161,7 @@ def _rebuild_model_from_keras_zip(keras_path):
 
 def load_model():
     """Load the trained TensorFlow model and class names."""
-    global model, class_names
+    global model, class_names, IMG_SIZE, MODEL_TYPE
 
     # Try loading in priority order: improved > phase3b > phase3a > phase2 > phase1
     model_files = [
