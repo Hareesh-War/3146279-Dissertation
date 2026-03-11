@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual environments
+.env/
+.venv/
+env/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+
+
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Model files (too large for git)
+*.h5
+*.keras
+*.tflite
+*.pb
+
+# Data (too large for git)
+data/
+datasets/
+
+# Logs
+logs/
+*.log
+
+# Database files
+*.db
+
+# Uploaded files
+webapp/static/uploads/
+
+# Old .py versions of notebooks (use .ipynb instead)
+notebooks/*.py
+
+# Local-only files
+src/
+docs/
+demo_notebooks/
+medicinal_plant_classification_demo.ipynb

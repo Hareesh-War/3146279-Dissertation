@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% block title %}Identify Plant | MediPlant ID{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>Medicinal Plant Identification</h1>
+    <p class="hero-subtitle">Upload or capture a plant leaf image for instant identification using deep learning</p>
+    {% if not model_loaded %}
+    <div class="alert alert-warning">
+        <strong>Demo Mode:</strong> No model loaded. Place your trained .h5 model file in
+        <code>webapp/models/</code> to enable predictions.
+    </div>
+    {% endif %}
+</div>
+
+<!-- Upload Section -->
+<div class="card upload-card">
+    <h2>Capture or Upload Image</h2>
+
+    <div class="upload-zone" id="uploadZone">
+        <div class="upload-icon">Upload</div>
+        <p>Tap to take a photo or select an image</p>
+        <p class="upload-hint">Supports JPG, PNG, BMP (max 16MB)</p>
+
+        <!-- Camera capture for mobile -->
+        <input type="file" id="imageInput" accept="image/*" capture="environment" hidden>
+    </div>
+
+    <div class="upload-buttons">
+        <button class="btn btn-primary" id="cameraBtn" onclick="document.getElementById('imageInput').click()">
+            Take Photo
+        </button>
+        <button class="btn btn-secondary" id="galleryBtn" onclick="openGallery()">
+            Choose from Gallery
+        </button>
+        <input type="file" id="galleryInput" accept="image/*" hidden>
+    </div>
+
+    <!-- Image Preview -->
+    <div class="preview-container" id="previewContainer" style="display: none;">
+        <img id="previewImage" class="preview-image" alt="Plant image preview">
+        <button class="btn btn-primary btn-identify" id="identifyBtn" onclick="identifyPlant()">
+            Identify Plant
+        </button>
+        <button class="btn btn-secondary" onclick="resetUpload()">
+            Clear
+        </button>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div class="loading" id="loading" style="display: none;">
+        <div class="spinner"></div>
+        <p>Analyzing plant...</p>
+    </div>
+</div>
+
+<!-- Results Section -->
+<div class="card results-card" id="resultsCard" style="display: none;">
+    <h2>Identification Results</h2>
+
+    <!-- OOD Warning Banner -->
+    <div class="ood-warning" id="oodWarning" style="display: none;">
+        <span class="ood-warning-icon" id="oodWarningIcon">!</span>
+        <span class="ood-warning-text" id="oodWarningText"></span>
+    </div>
+
+    <!-- Top Prediction -->
+    <div class="top-result" id="topResult">
+        <div class="result-image-container">
+            <img id="resultImage" class="result-image" alt="Identified plant">
+        </div>
+        <div class="result-info">
+            <h3 id="resultSpecies" class="result-species"></h3>
+            <div class="confidence-bar-container">
+                <div class="confidence-bar" id="confidenceBar"></div>
+            </div>
+            <p class="confidence-text" id="confidenceText"></p>
+            <div id="conservationBadge" class="conservation-badge"></div>
+            <div id="harvestingBadge" class="harvesting-badge"></div>
+            <p id="resultDescription" class="result-description"></p>
+        </div>
+    </div>
+
+    <!-- All Predictions -->
+    <div class="all-predictions" id="allPredictions">
+        <h4>All Predictions</h4>
+        <div id="predictionsList"></div>
+    </div>
+</div>
+
+<!-- Recent Predictions -->
+{% if recent_predictions %}
+<div class="card">
+    <h2>Recent Identifications</h2>
+    <div class="recent-grid">
+        {% for pred in recent_predictions %}
+        <div class="recent-item">
+            <img src="{{ url_for('static', filename=pred.image_path) }}" alt="Plant" class="recent-image"
+                onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>'">
+            <div class="recent-info">
+                <strong>{{ pred.predicted_species | replace('_', ' ') }}</strong>
+                <span class="recent-confidence">{{ pred.confidence }}%</span>
+                <span class="recent-time">{{ pred.timestamp }}</span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+{% endblock %}

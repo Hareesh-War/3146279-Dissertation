@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% block title %}About | MediPlant ID{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>About This Project</h1>
+    <p class="hero-subtitle">BSc Software Engineering Honours Dissertation</p>
+</div>
+
+<div class="card">
+    <h2>Sequential Transfer Learning for Medicinal Plant Identification</h2>
+    <h3>Endangered Species Protection and Sustainable Harvesting</h3>
+
+    <div class="about-grid">
+        <div class="about-item">
+            <strong>Student</strong>
+            <p>Hari (3146279)</p>
+        </div>
+        <div class="about-item">
+            <strong>Degree</strong>
+            <p>BSc Software Engineering Honours</p>
+        </div>
+        <div class="about-item">
+            <strong>University</strong>
+            <p>University of Stirling</p>
+        </div>
+        <div class="about-item">
+            <strong>Supervisor</strong>
+            <p>Dr. Shamik Palit</p>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>🧠 How It Works</h2>
+
+    <div class="pipeline-diagram">
+        <div class="pipeline-step">
+            <div class="step-number">1</div>
+            <h4>Image Capture</h4>
+            <p>User captures a plant leaf photo via mobile camera or uploads an image</p>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">
+            <div class="step-number">2</div>
+            <h4>Preprocessing</h4>
+            <p>Image resized to 224×224 and normalized for the CNN model</p>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">
+            <div class="step-number">3</div>
+            <h4>Deep Learning</h4>
+            <p>ResNet50 model with sequential transfer learning classifies the species</p>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">
+            <div class="step-number">4</div>
+            <h4>Results</h4>
+            <p>Species identified with confidence score, conservation status, and harvesting guidance</p>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Sequential Transfer Learning Pipeline</h2>
+    <p>The model is trained in 4 phases, each building on the previous:</p>
+
+    <div class="phase-list">
+        <div class="phase-item phase-1">
+            <strong>Phase 1: General Medicinal Features</strong>
+            <p>Dataset 1 — 6 species, 1,380 images. Establishes baseline plant feature recognition.</p>
+        </div>
+        <div class="phase-item phase-2">
+            <strong>Phase 2: Regional Context (Bangladesh)</strong>
+            <p>Dataset 2 — 6 species, 1,094 images. Adapts to South Asian regional plant morphology.</p>
+        </div>
+        <div class="phase-item phase-3a">
+            <strong>Phase 3a: Endangered Species</strong>
+            <p>Dataset 4 (REMP) — 16 species, 3,494 images. Optimized for high recall on endangered species.</p>
+        </div>
+        <div class="phase-item phase-3b">
+            <strong>Phase 3b: Commercial Species</strong>
+            <p>Dataset 5 (SIMPD) — 20 species, 2,503 images. Optimized for high precision on commercial species.</p>
+        </div>
+    </div>
+
+    <p><strong>Independent Test:</strong> Dataset 3 (9 species, ~900 images) held out for unbiased evaluation.</p>
+</div>
+
+<div class="card">
+    <h2>🏗️ System Architecture</h2>
+    <div class="architecture-list">
+        <div class="arch-item">
+            <strong>Frontend:</strong> HTML5/JavaScript, mobile-responsive, camera capture API
+        </div>
+        <div class="arch-item">
+            <strong>Backend:</strong> Python Flask REST API serving the TensorFlow model
+        </div>
+        <div class="arch-item">
+            <strong>Database:</strong> SQLite for species metadata and prediction logging
+        </div>
+        <div class="arch-item">
+            <strong>Model:</strong> TensorFlow/Keras, ResNet50 with sequential transfer learning
+        </div>
+        <div class="arch-item">
+            <strong>Training:</strong> Google Colab with GPU acceleration
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Datasets</h2>
+    <p>All datasets sourced from <a href="https://data.mendeley.com" target="_blank">Mendeley Data</a>:</p>
+    <ul>
+        <li><strong>Dataset 1:</strong> Indian Medicinal Leaves Dataset (6 species)</li>
+        <li><strong>Dataset 2:</strong> Bangladeshi Medicinal Plant Dataset (6 species)</li>
+        <li><strong>Dataset 3:</strong> Independent Test Set (9 species) — held for evaluation</li>
+        <li><strong>Dataset 4 (REMP):</strong> Rare/Endangered Medicinal Plants (16 species)</li>
+        <li><strong>Dataset 5 (SIMPD):</strong> South Indian Medicinal Plants (20 species)</li>
+    </ul>
+    <p><strong>Total:</strong> 37 unique species, 9,551 images across 5 datasets</p>
+</div>
+{% endblock %}

@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% block title %}Species Database | MediPlant ID{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>Species Database</h1>
+    <p class="hero-subtitle">{{ species | length }} medicinal plant species across 5 datasets</p>
+</div>
+
+<!-- Filter -->
+<div class="card">
+    <div class="filter-bar">
+        <input type="text" id="speciesSearch" class="search-input" placeholder="Search species..."
+            onkeyup="filterSpecies()">
+        <select id="datasetFilter" class="filter-select" onchange="filterSpecies()">
+            <option value="all">All Datasets</option>
+            <option value="Dataset 1">Dataset 1 (General)</option>
+            <option value="Dataset 2">Dataset 2 (Bangladesh)</option>
+            <option value="Dataset 4">Dataset 4 (Endangered)</option>
+            <option value="Dataset 5">Dataset 5 (Commercial)</option>
+        </select>
+        <select id="statusFilter" class="filter-select" onchange="filterSpecies()">
+            <option value="all">All Status</option>
+            <option value="safe">Safe to Harvest</option>
+            <option value="protected">Protected</option>
+        </select>
+    </div>
+</div>
+
+<!-- Species Grid -->
+<div class="species-grid" id="speciesGrid">
+    {% for s in species %}
+    <div class="species-card" data-name="{{ s.name | lower }}" data-scientific="{{ (s.scientific_name or '') | lower }}"
+        data-dataset="{{ s.dataset_source or '' }}" data-harvesting="{{ s.harvesting_legal }}">
+
+        <div class="species-header">
+            <h3>{{ s.name | replace('_', ' ') }}</h3>
+            {% if s.scientific_name %}
+            <p class="scientific-name"><em>{{ s.scientific_name }}</em></p>
+            {% endif %}
+        </div>
+
+        <div class="species-badges">
+            {% if s.conservation_status == 'Critically Endangered' %}
+            <span class="badge badge-danger">🔴 {{ s.conservation_status }}</span>
+            {% elif s.conservation_status == 'Endangered' %}
+            <span class="badge badge-danger">🔴 {{ s.conservation_status }}</span>
+            {% elif s.conservation_status == 'Vulnerable' %}
+            <span class="badge badge-warning">🟡 {{ s.conservation_status }}</span>
+            {% elif s.conservation_status == 'Near Threatened' %}
+            <span class="badge badge-warning">🟡 {{ s.conservation_status }}</span>
+            {% else %}
+            <span class="badge badge-success">🟢 {{ s.conservation_status }}</span>
+            {% endif %}
+
+            {% if s.harvesting_legal == 0 %}
+            <span class="badge badge-danger">Protected</span>
+            {% else %}
+            <span class="badge badge-success">Harvestable</span>
+            {% endif %}
+        </div>
+
+        {% if s.region %}
+        <p class="species-region">📍 {{ s.region }}</p>
+        {% endif %}
+
+        {% if s.description %}
+        <p class="species-description">{{ s.description[:120] }}{% if s.description|length > 120 %}...{% endif %}</p>
+        {% endif %}
+
+        {% if s.medicinal_uses %}
+        <p class="species-uses"><strong>Uses:</strong> {{ s.medicinal_uses[:100] }}{% if s.medicinal_uses|length > 100
+            %}...{% endif %}</p>
+        {% endif %}
+
+        <p class="species-source">{{ s.dataset_source }}</p>
+
+        <a href="/species/{{ s.name }}" class="btn btn-small">View Details →</a>
+    </div>
+    {% endfor %}
+</div>
+
+{% if not species %}
+<div class="card text-center">
+    <p>No species in database yet. Species data will be populated when the app starts.</p>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function filterSpecies() {
+        const search = document.getElementById('speciesSearch').value.toLowerCase();
+        const dataset = document.getElementById('datasetFilter').value;
+        const status = document.getElementById('statusFilter').value;
+
+        document.querySelectorAll('.species-card').forEach(card => {
+            const name = card.dataset.name;
+            const scientific = card.dataset.scientific;
+            const cardDataset = card.dataset.dataset;
+            const harvesting = card.dataset.harvesting;
+
+            let show = true;
+
+            // Search filter
+            if (search && !name.includes(search) && !scientific.includes(search)) {
+                show = false;
+            }
+
+            // Dataset filter
+            if (dataset !== 'all' && !cardDataset.includes(dataset)) {
+                show = false;
+            }
+
+            // Status filter
+            if (status === 'safe' && harvesting === '0') show = false;
+            if (status === 'protected' && harvesting === '1') show = false;
+
+            card.style.display = show ? '' : 'none';
+        });
+    }
+</script>
+{% endblock %}

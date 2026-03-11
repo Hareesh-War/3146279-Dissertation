@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block title %}{{ name | replace('_', ' ') }} | MediPlant ID{% endblock %}
+
+{% block content %}
+{% if species %}
+<div class="card species-detail-card">
+    <a href="/species" class="back-link">← Back to Species</a>
+
+    <h1>{{ species.name | replace('_', ' ') }}</h1>
+
+    {% if species.scientific_name %}
+    <p class="scientific-name-large"><em>{{ species.scientific_name }}</em></p>
+    {% endif %}
+
+    <!-- Badges -->
+    <div class="detail-badges">
+        {% if species.conservation_status == 'Critically Endangered' %}
+        <span class="badge badge-danger badge-large">🔴 {{ species.conservation_status }}</span>
+        {% elif species.conservation_status == 'Endangered' %}
+        <span class="badge badge-danger badge-large">🔴 {{ species.conservation_status }}</span>
+        {% elif species.conservation_status == 'Vulnerable' %}
+        <span class="badge badge-warning badge-large">🟡 {{ species.conservation_status }}</span>
+        {% elif species.conservation_status == 'Near Threatened' %}
+        <span class="badge badge-warning badge-large">🟡 {{ species.conservation_status }}</span>
+        {% else %}
+        <span class="badge badge-success badge-large">🟢 {{ species.conservation_status }}</span>
+        {% endif %}
+
+        {% if species.harvesting_legal == 0 %}
+        <span class="badge badge-danger badge-large">HARVESTING PROHIBITED</span>
+        {% else %}
+        <span class="badge badge-success badge-large">Safe to Harvest</span>
+        {% endif %}
+    </div>
+
+    <!-- Warning for protected species -->
+    {% if species.harvesting_legal == 0 %}
+    <div class="alert alert-danger">
+        <strong>PROTECTED SPECIES</strong><br>
+        This species is protected. Harvesting, collection, or trade may be illegal
+        under national and international wildlife protection laws.
+    </div>
+    {% endif %}
+
+    <!-- Info Grid -->
+    <div class="detail-grid">
+        {% if species.common_names %}
+        <div class="detail-item">
+            <strong>Common Names</strong>
+            <p>{{ species.common_names }}</p>
+        </div>
+        {% endif %}
+
+        {% if species.region %}
+        <div class="detail-item">
+            <strong>Region</strong>
+            <p>📍 {{ species.region }}</p>
+        </div>
+        {% endif %}
+
+        {% if species.dataset_source %}
+        <div class="detail-item">
+            <strong>Dataset Source</strong>
+            <p>{{ species.dataset_source }}</p>
+        </div>
+        {% endif %}
+    </div>
+
+    {% if species.description %}
+    <div class="detail-section">
+        <h3>Description</h3>
+        <p>{{ species.description }}</p>
+    </div>
+    {% endif %}
+
+    {% if species.medicinal_uses %}
+    <div class="detail-section">
+        <h3>Medicinal Uses</h3>
+        <p>{{ species.medicinal_uses }}</p>
+    </div>
+    {% endif %}
+</div>
+
+{% else %}
+<div class="card text-center">
+    <a href="/species" class="back-link">← Back to Species</a>
+    <h2>Species Not Found</h2>
+    <p>"{{ name | replace('_', ' ') }}" is not in the database yet.</p>
+    <p>This species may have been identified by the model but hasn't been documented.</p>
+</div>
+{% endif %}
+{% endblock %}
