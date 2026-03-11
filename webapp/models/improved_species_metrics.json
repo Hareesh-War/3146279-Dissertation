@@ -1,0 +1,123 @@
+{
+  "Abutilon Indicum": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 0.0
+  },
+  "Aloe barbadensis miller": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 0.0
+  },
+  "Calotropis gigantea": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 0.0
+  },
+  "Canna indica": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 0.0
+  },
+  "Cissus quadrangularis": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 0.0
+  },
+  "Curcuma longa": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 0.0
+  },
+  "Eclipta prostrate": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 0.0
+  },
+  "Eichhornia Crassipes": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 0.0
+  },
+  "Hibiscus Rosasinensis": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 0.0
+  },
+  "Ixora coccinea": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 0.0
+  },
+  "Justica adhatoda": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 0.0
+  },
+  "Murraya koenigii": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 0.0
+  },
+  "Ocimum tenuiflorum": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 0.0
+  },
+  "Ouretlanata": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 34.0
+  },
+  "Phyllanthus amarus": {
+    "precision": 1.0,
+    "recall": 0.990990990990991,
+    "f1-score": 0.995475113122172,
+    "support": 111.0
+  },
+  "Ricinus communis": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 109.0
+  },
+  "Senna Atriculata": {
+    "precision": 1.0,
+    "recall": 0.992,
+    "f1-score": 0.9959839357429718,
+    "support": 125.0
+  },
+  "Sesbania grandiflora": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 83.0
+  },
+  "accuracy": 0.9956709956709957,
+  "macro avg": {
+    "precision": 0.2777777777777778,
+    "recall": 0.2768328328328329,
+    "f1-score": 0.27730328049250796,
+    "support": 462.0
+  },
+  "weighted avg": {
+    "precision": 1.0,
+    "recall": 0.9956709956709957,
+    "f1-score": 0.9978262543818888,
+    "support": 462.0
+  }
+}
