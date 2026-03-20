@@ -97,8 +97,8 @@
   },
   "Senna Atriculata": {
     "precision": 1.0,
-    "recall": 0.992,
-    "f1-score": 0.9959839357429718,
+    "recall": 1.0,
+    "f1-score": 1.0,
     "support": 125.0
   },
   "Sesbania grandiflora": {
@@ -107,17 +107,17 @@
     "f1-score": 1.0,
     "support": 83.0
   },
-  "accuracy": 0.9956709956709957,
+  "accuracy": 0.9978354978354979,
   "macro avg": {
     "precision": 0.2777777777777778,
-    "recall": 0.2768328328328329,
-    "f1-score": 0.27730328049250796,
+    "recall": 0.27727727727727725,
+    "f1-score": 0.277526395173454,
     "support": 462.0
   },
   "weighted avg": {
     "precision": 1.0,
-    "recall": 0.9956709956709957,
-    "f1-score": 0.9978262543818888,
+    "recall": 0.9978354978354979,
+    "f1-score": 0.9989128518540283,
     "support": 462.0
   }
 }
