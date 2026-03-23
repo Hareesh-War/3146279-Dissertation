@@ -2,9 +2,9 @@
 
 **BSc Software Engineering Dissertation - University of Stirling**
 
-**Author:** Hareeshwar Muthukumanan (3146279)  
-**Supervisor:** Dr. Shamik Palit  
-**Module:** CSCU9Z7 - Final Year Dissertation  
+**Author:** Hareeshwar Muthukumanan (3146279)
+**Supervisor:** Dr. Shamik Palit
+**Module:** CSCU9Z7 - Final Year Dissertation
 **Ethics Approval:** GUEP 2025 24485 18893
 
 ---
@@ -34,24 +34,28 @@ medicinal-plant-identification/
 ├── README.md
 ├── requirements.txt
 ├── notebooks/
-│   ├── Completed Notebooks/       # All training notebooks (01-09)
+│   ├── Completed Notebooks/
 │   │   ├── 01_data_exploration.ipynb
 │   │   ├── 02_phase1_baseline.ipynb
 │   │   ├── 03_phase2_regional.ipynb
 │   │   ├── 04_phase3a_endangered.ipynb
 │   │   ├── 05_phase3b_commercial.ipynb
-│   │   ├── 06_retrain_improved.ipynb
+│   │   ├── 06_retrain_improved.ipynb       (EfficientNetB3, 99.57%)
 │   │   ├── 07_dissertation_figures.ipynb
 │   │   ├── 08_ablation_study.ipynb
-│   │   └── 09_dataset3_test_gradcam.ipynb
-│   └── Phase3b Files/             # Saved metrics from Phase 3b
-├── webapp/                         # Flask web application
+│   │   ├── 09_dataset3_test_gradcam.ipynb
+│   │   ├── 10a_18class_reeval.ipynb        (18-class fair evaluation)
+│   │   └── 10b_multiseed_ablation.ipynb    (5-seed statistical power)
+│   ├── nb06_improved_files/                (EfficientNetB3 model outputs)
+│   └── phase3b_files/                      (Phase 3b model outputs)
+├── webapp/
 │   ├── app.py
 │   ├── database.py
+│   ├── requirements.txt
 │   ├── templates/
 │   ├── static/
 │   └── models/
-└── data/                           # Datasets (not tracked in git)
+└── data/                                   (Datasets - not tracked)
 ```
 
 ---
@@ -66,7 +70,7 @@ All datasets sourced from Mendeley Data:
 | 2 | Bangladesh Medicinal Plants | 30 | 1,983 | Phase 2 - Regional |
 | 3 | Medicinal Leaf Dataset | 40 | 2,568 | Independent Test Set |
 | 4 | Medicinal Plant Dataset | 40 | 3,263 | Phase 3a - Endangered |
-| 5 | SIMPD Commercial | 20 | ~360 | Phase 3b - Commercial |
+| 5 | SIMPD Commercial | 20 | 2,363 | Phase 3b - Commercial |
 
 ---
 
@@ -79,7 +83,7 @@ All notebooks run in **Google Colab** with GPU:
 3. Set runtime to GPU: Runtime -> Change runtime type -> GPU
 4. Run cells sequentially
 
-Notebooks should be run in order (01 through 09) as each phase loads the model saved by the previous phase.
+Notebooks should be run in order (01 through 09) as each phase loads the model saved by the previous phase. Notebooks 10a and 10b are standalone evaluation notebooks.
 
 ---
 
@@ -95,11 +99,25 @@ python app.py
 
 Open `http://localhost:5000` in a browser.
 
+Features:
+- Species identification with confidence scores
+- Test-time augmentation (TTA) for robust predictions
+- Out-of-distribution detection for unseen species
+- Prediction history and species information database
+
 ---
 
 ## Results
 
-Phase 3b validation accuracy: **73.65%** (weighted F1: 73.52%) across 20 species on 463 validation images.
+| Model | Accuracy | Notes |
+|-------|----------|-------|
+| Phase 3b (Sequential, 20 classes) | 70.84% | Cross-regional transfer |
+| Phase 3b (Sequential, 18 classes) | 71.43% | Excluding 2 classes with insufficient data |
+| Direct Transfer (single seed) | 74.46% | seed=42 |
+| Direct Transfer (multi-seed, n=5) | 70.00 ± 2.74% | Seeds: 42, 123, 456, 789, 2024 |
+| EfficientNetB3 (18 classes) | 99.57% | Single dataset, class balanced |
+
+Multi-seed replication showed the gap between sequential and direct transfer is not statistically significant (sequential 71.43% falls within the 95% CI [64.63%, 75.37%]).
 
 ---
 
@@ -108,9 +126,10 @@ Phase 3b validation accuracy: **73.65%** (weighted F1: 73.52%) across 20 species
 1. He, K., et al. (2016). Deep Residual Learning for Image Recognition. CVPR.
 2. Yosinski, J., et al. (2014). How transferable are features in deep neural networks? NeurIPS.
 3. Selvaraju, R.R., et al. (2017). Grad-CAM: Visual Explanations from Deep Networks. ICCV.
+4. Tan, M. & Le, Q.V. (2019). EfficientNet: Rethinking Model Scaling for CNNs. ICML.
 
 ---
 
-**Hareeshwar Muthukumanan** | Student ID: 3146279 | University of Stirling
+**Hareeshwar Muthukumaran** | Student ID: 3146279 | University of Stirling
 
 *Last updated: March 2026*
