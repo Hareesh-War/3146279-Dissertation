@@ -18,7 +18,7 @@ This project implements a sequential transfer learning pipeline for identifying 
 ```
 Phase 1: General Features (Dataset 1 - 6 species)
     |
-Phase 2: Regional Context (Dataset 2 - Bangladesh medicinal plants)
+Phase 2: Regional Context (Dataset 2 - 6 Bangladesh species)
     |
 Phase 3a: Endangered Species (Dataset 4 - 16 species, high recall)
     |
@@ -64,13 +64,14 @@ medicinal-plant-identification/
 
 All datasets sourced from Mendeley Data:
 
-| # | Dataset | Species | Images | Role |
-|---|---------|---------|--------|------|
-| 1 | Indian Medicinal Leaves | 6 | 1,380 | Phase 1 - Baseline |
-| 2 | Bangladesh Medicinal Plants | 30 | 1,983 | Phase 2 - Regional |
-| 3 | Medicinal Leaf Dataset | 40 | 2,568 | Independent Test Set |
-| 4 | Medicinal Plant Dataset | 40 | 3,263 | Phase 3a - Endangered |
-| 5 | SIMPD Commercial | 20 | 2,363 | Phase 3b - Commercial |
+| # | Dataset | Species | Images | Region | Role |
+|---|---------|---------|--------|--------|------|
+| 1 | Medicinal Plant Identification | 6 | ~1,380 | Generic | Phase 1 - Baseline |
+| 2 | Bangladesh Medicinal Leaves | 6 | ~1,094 | Bangladesh | Phase 2 - Regional |
+| 3 | Medicinal Leaf Dataset | 9 | ~900 | Generic | Independent Test Set |
+| 4 | REMP - Rare Endangered | 16 | ~3,494 | Bangladesh | Phase 3a - Endangered |
+| 5 | SIMPD - South Indian | 20 | ~2,503 | South India | Phase 3b - Commercial |
+| **Total** | | **37** (unique) | **~9,551** | | |
 
 ---
 
