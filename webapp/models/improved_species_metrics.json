@@ -1,123 +1,123 @@
 {
   "Abutilon Indicum": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 0.0
+    "precision": 0.9642857142857143,
+    "recall": 1.0,
+    "f1-score": 0.9818181818181818,
+    "support": 27.0
   },
   "Aloe barbadensis miller": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 0.0
-  },
-  "Calotropis gigantea": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 0.0
-  },
-  "Canna indica": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 0.0
-  },
-  "Cissus quadrangularis": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 0.0
-  },
-  "Curcuma longa": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 0.0
-  },
-  "Eclipta prostrate": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 0.0
-  },
-  "Eichhornia Crassipes": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 0.0
-  },
-  "Hibiscus Rosasinensis": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 0.0
-  },
-  "Ixora coccinea": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 0.0
-  },
-  "Justica adhatoda": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 0.0
-  },
-  "Murraya koenigii": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 0.0
-  },
-  "Ocimum tenuiflorum": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 0.0
-  },
-  "Ouretlanata": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 34.0
+    "support": 21.0
+  },
+  "Calotropis gigantea": {
+    "precision": 0.9473684210526315,
+    "recall": 1.0,
+    "f1-score": 0.972972972972973,
+    "support": 18.0
+  },
+  "Canna indica": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 29.0
+  },
+  "Cissus quadrangularis": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 31.0
+  },
+  "Curcuma longa": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 24.0
+  },
+  "Eclipta prostrate": {
+    "precision": 1.0,
+    "recall": 0.9777777777777777,
+    "f1-score": 0.9887640449438202,
+    "support": 45.0
+  },
+  "Eichhornia Crassipes": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 48.0
+  },
+  "Hibiscus Rosasinensis": {
+    "precision": 0.9565217391304348,
+    "recall": 1.0,
+    "f1-score": 0.9777777777777777,
+    "support": 22.0
+  },
+  "Ixora coccinea": {
+    "precision": 1.0,
+    "recall": 0.95,
+    "f1-score": 0.9743589743589743,
+    "support": 20.0
+  },
+  "Justica adhatoda": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 19.0
+  },
+  "Murraya koenigii": {
+    "precision": 1.0,
+    "recall": 0.9473684210526315,
+    "f1-score": 0.972972972972973,
+    "support": 19.0
+  },
+  "Ocimum tenuiflorum": {
+    "precision": 1.0,
+    "recall": 0.9565217391304348,
+    "f1-score": 0.9777777777777777,
+    "support": 23.0
+  },
+  "Ouretlanata": {
+    "precision": 0.9615384615384616,
+    "recall": 1.0,
+    "f1-score": 0.9803921568627451,
+    "support": 25.0
   },
   "Phyllanthus amarus": {
     "precision": 1.0,
-    "recall": 0.990990990990991,
-    "f1-score": 0.995475113122172,
-    "support": 111.0
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 19.0
   },
   "Ricinus communis": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 109.0
+    "support": 25.0
   },
   "Senna Atriculata": {
     "precision": 1.0,
-    "recall": 0.992,
-    "f1-score": 0.9959839357429718,
-    "support": 125.0
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 26.0
   },
   "Sesbania grandiflora": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 83.0
+    "support": 21.0
   },
-  "accuracy": 0.9956709956709957,
+  "accuracy": 0.9913419913419913,
   "macro avg": {
-    "precision": 0.2777777777777778,
-    "recall": 0.2768328328328329,
-    "f1-score": 0.27730328049250796,
+    "precision": 0.9905396853337357,
+    "recall": 0.9906482187756025,
+    "f1-score": 0.9903797144158458,
     "support": 462.0
   },
   "weighted avg": {
-    "precision": 1.0,
-    "recall": 0.9956709956709957,
-    "f1-score": 0.9978262543818888,
+    "precision": 0.9917105750302874,
+    "recall": 0.9913419913419913,
+    "f1-score": 0.9913429790915822,
     "support": 462.0
   }
 }

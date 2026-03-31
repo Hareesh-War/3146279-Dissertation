@@ -1,0 +1,125 @@
+{
+  "model": "EfficientNetB3",
+  "input_size": "300x300",
+  "accuracy_18class": 0.9913419913419913,
+  "total_samples": 462,
+  "correct": 458,
+  "num_classes": 18,
+  "weighted_precision": 0.9917105750302874,
+  "weighted_recall": 0.9913419913419913,
+  "weighted_f1": 0.9913429790915822,
+  "macro_precision": 0.9905396853337357,
+  "macro_recall": 0.9906482187756025,
+  "macro_f1": 0.9903797144158458,
+  "per_species": {
+    "Abutilon Indicum": {
+      "precision": 0.9642857142857143,
+      "recall": 1.0,
+      "f1": 0.9818181818181818,
+      "support": 27
+    },
+    "Aloe barbadensis miller": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 21
+    },
+    "Calotropis gigantea": {
+      "precision": 0.9473684210526315,
+      "recall": 1.0,
+      "f1": 0.972972972972973,
+      "support": 18
+    },
+    "Canna indica": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 29
+    },
+    "Cissus quadrangularis": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 31
+    },
+    "Curcuma longa": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 24
+    },
+    "Eclipta prostrate": {
+      "precision": 1.0,
+      "recall": 0.9777777777777777,
+      "f1": 0.9887640449438202,
+      "support": 45
+    },
+    "Eichhornia Crassipes": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 48
+    },
+    "Hibiscus Rosasinensis": {
+      "precision": 0.9565217391304348,
+      "recall": 1.0,
+      "f1": 0.9777777777777777,
+      "support": 22
+    },
+    "Ixora coccinea": {
+      "precision": 1.0,
+      "recall": 0.95,
+      "f1": 0.9743589743589743,
+      "support": 20
+    },
+    "Justica adhatoda": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 19
+    },
+    "Murraya koenigii": {
+      "precision": 1.0,
+      "recall": 0.9473684210526315,
+      "f1": 0.972972972972973,
+      "support": 19
+    },
+    "Ocimum tenuiflorum": {
+      "precision": 1.0,
+      "recall": 0.9565217391304348,
+      "f1": 0.9777777777777777,
+      "support": 23
+    },
+    "Ouretlanata": {
+      "precision": 0.9615384615384616,
+      "recall": 1.0,
+      "f1": 0.9803921568627451,
+      "support": 25
+    },
+    "Phyllanthus amarus": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 19
+    },
+    "Ricinus communis": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 25
+    },
+    "Senna Atriculata": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 26
+    },
+    "Sesbania grandiflora": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 21
+    }
+  },
+  "note": "Corrected evaluation \u2014 NB06 had shuffle=False bug giving only 5 classes"
+}

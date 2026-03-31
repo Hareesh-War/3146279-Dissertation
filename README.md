@@ -40,12 +40,13 @@ medicinal-plant-identification/
 │   │   ├── 03_phase2_regional.ipynb
 │   │   ├── 04_phase3a_endangered.ipynb
 │   │   ├── 05_phase3b_commercial.ipynb
-│   │   ├── 06_retrain_improved.ipynb       (EfficientNetB3, 99.57%)
+│   │   ├── 06_retrain_improved.ipynb       (EfficientNetB3 training)
 │   │   ├── 07_dissertation_figures.ipynb
 │   │   ├── 08_ablation_study.ipynb
 │   │   ├── 09_dataset3_test_gradcam.ipynb
 │   │   ├── 10a_18class_reeval.ipynb        (18-class fair evaluation)
-│   │   └── 10b_multiseed_ablation.ipynb    (5-seed statistical power)
+│   │   ├── 10b_multiseed_ablation.ipynb    (5-seed statistical power)
+│   │   └── 10c_efficientnet_eval.ipynb     (EfficientNetB3 18-class eval, 99.13%)
 │   ├── nb06_improved_files/                (EfficientNetB3 model outputs)
 │   └── phase3b_files/                      (Phase 3b model outputs)
 ├── webapp/
@@ -84,7 +85,7 @@ All notebooks run in **Google Colab** with GPU:
 3. Set runtime to GPU: Runtime -> Change runtime type -> GPU
 4. Run cells sequentially
 
-Notebooks should be run in order (01 through 09) as each phase loads the model saved by the previous phase. Notebooks 10a and 10b are standalone evaluation notebooks.
+Notebooks should be run in order (01 through 09) as each phase loads the model saved by the previous phase. Notebooks 10a, 10b, and 10c are standalone evaluation notebooks.
 
 ---
 
@@ -116,7 +117,7 @@ Features:
 | Phase 3b (Sequential, 18 classes) | 71.43% | Excluding 2 classes with insufficient data |
 | Direct Transfer (single seed) | 74.46% | seed=42 |
 | Direct Transfer (multi-seed, n=5) | 70.00 ± 2.74% | Seeds: 42, 123, 456, 789, 2024 |
-| EfficientNetB3 (18 classes) | 99.57% | Single dataset, class balanced |
+| EfficientNetB3 (18 classes) | 99.13% | Single dataset, class balanced |
 
 Multi-seed replication showed the gap between sequential and direct transfer is not statistically significant (sequential 71.43% falls within the 95% CI [64.63%, 75.37%]).
 
