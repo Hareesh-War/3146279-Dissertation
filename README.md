@@ -3,8 +3,11 @@
 **BSc Software Engineering Dissertation - University of Stirling**
 
 **Author:** Hareeshwar Muthukumanan (3146279)
+
 **Supervisor:** Dr. Shamik Palit
+
 **Module:** CSCU9Z7 - Final Year Dissertation
+
 **Ethics Approval:** GUEP 2025 24485 18893
 
 ---
