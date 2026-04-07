@@ -125,13 +125,10 @@ Multi-seed replication showed the gap between sequential and direct transfer is 
 
 ## References
 
-1. He, K., et al. (2016). Deep Residual Learning for Image Recognition. CVPR.
-2. Yosinski, J., et al. (2014). How transferable are features in deep neural networks? NeurIPS.
-3. Selvaraju, R.R., et al. (2017). Grad-CAM: Visual Explanations from Deep Networks. ICCV.
-4. Tan, M. & Le, Q.V. (2019). EfficientNet: Rethinking Model Scaling for CNNs. ICML.
+Full references in the dissertation document
 
 ---
 
 **Hareeshwar Muthukumaran** | Student ID: 3146279 | University of Stirling
 
-*Last updated: March 2026*
+*Last updated: April 2026*
