@@ -125,7 +125,7 @@ Multi-seed replication showed the gap between sequential and direct transfer is 
 
 ## References
 
-Full references in the dissertation document
+Full references available in the dissertation document (38 sources cited)
 
 ---
 
