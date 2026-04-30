@@ -26,8 +26,8 @@ venv/
 Thumbs.db
 
 # Model files (too large for git)
-*.h5
-*.keras
+#*.h5
+#*.keras
 *.tflite
 *.pb
 
